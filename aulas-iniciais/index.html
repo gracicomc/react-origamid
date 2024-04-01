@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>React para Iniciantes</title>
+
+    <!-- Carrega o React, React Dom e Babel -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+    <!-- Don't use this in production: -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+
+  <body>
+    <div id="root">App</div>
+    <!-- Precisa indicar para o Babel que ele deve transpilar o código -->
+    <script type="text/babel">
+      const handleClick = () => {
+        console.log('aadadada');
+      };
+      const Button = () => {
+        return <button onClick={handleClick}> Comprar</button>;
+      };
+
+      const App = () => {
+        return (
+          <div>
+            <h1>teste</h1>
+            <Button />
+          </div>
+        );
+      };
+
+      // Renderiza o componente App no elemento que tiver id = app
+      ReactDOM.render(<App />, document.getElementById('root'));
+    </script>
+  </body>
+</html>
